@@ -2,14 +2,14 @@
 pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
+//import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract WETHToken is ERC20, Ownable {
+contract WETHToken is ERC20 {
      // Event for deposit and withdrawal
     event Deposit(address indexed account, uint256 amount);
     event Withdraw(address indexed account, uint256 amount);
 
-    constructor(address initialOwner) ERC20("Wrapped Ether", "WETH") {
+    constructor() ERC20("Wrapped Ether", "WETH") {
         //super(); // Call the base contract's constructor
     }
 

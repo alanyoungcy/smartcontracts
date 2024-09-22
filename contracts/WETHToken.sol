@@ -5,11 +5,13 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract WETHToken is ERC20, Ownable {
-    // Event for deposit and withdrawal
+     // Event for deposit and withdrawal
     event Deposit(address indexed account, uint256 amount);
     event Withdraw(address indexed account, uint256 amount);
 
-    constructor() ERC20("Wrapped Ether", "WETH") {}
+    constructor(address initialOwner) ERC20("Wrapped Ether", "WETH") {
+        //super(); // Call the base contract's constructor
+    }
 
     // Deposit Ether and mint Wrapped Token
     function deposit() external payable {
